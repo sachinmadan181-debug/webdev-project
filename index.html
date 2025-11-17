@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>StorySmith — generate short stories</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>StorySmith</h1>
+    <p class="tag">Create a story from a topic, genre and length — instant and editable.</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <label>
+        Topic
+        <input id="topic" type="text" placeholder="e.g. a lost watch, a runaway robot, childhood summer" />
+      </label>
+
+      <label>
+        Genre
+        <select id="genre">
+          <option>Adventure</option>
+          <option>Fantasy</option>
+          <option>Science Fiction</option>
+          <option>Horror</option>
+          <option>Romance</option>
+          <option>Mystery</option>
+          <option>Comedy</option>
+          <option>Drama</option>
+        </select>
+      </label>
+
+      <label>
+        Length
+        <select id="length">
+          <option value="short">Short (150-300 words)</option>
+          <option value="medium" selected>Medium (400-700 words)</option>
+          <option value="long">Long (800-1200 words)</option>
+        </select>
+      </label>
+
+      <div class="buttons">
+        <button id="generate">Generate Story</button>
+        <button id="surprise">Surprise Me</button>
+        <button id="clear">Clear</button>
+      </div>
+
+      <div class="utility">
+        <label>
+          Typing speed
+          <input id="speed" type="range" min="0" max="60" value="18" />
+        </label>
+        <button id="download" title="Download the generated story as a .txt file">Download .txt</button>
+      </div>
+    </section>
+
+    <section class="output">
+      <div id="meta" class="meta">
+        <small id="metaText"></small>
+      </div>
+
+      <div id="story" class="story" contenteditable="false" aria-live="polite"></div>
+
+      <div class="footer-controls">
+        <button id="editToggle">Edit Story</button>
+        <button id="regenerate">Regenerate (same inputs)</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Built with JavaScript templates — no external APIs. Enjoy ✨</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
